@@ -1,4 +1,8 @@
-# main.rb
 
+require 'pry'
 require './matches'
-Matches.generate_match
+require './turns'
+require './questions'
+require './players'
+
+MathGame::Match.generate_match

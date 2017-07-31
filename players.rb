@@ -1,12 +1,11 @@
-# player.rb
 
-class Players
+module MathGame
+  class Player
+    attr_accessor :name, :lives
 
-  attr_accessor :name, :lives
-
-  def initialize(name)
-    @name = name
-    @lives = 3
+    def initialize(name)
+      @name = name
+      @lives = 3
+    end
   end
-
 end
