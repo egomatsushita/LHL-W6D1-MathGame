@@ -1,29 +1,29 @@
 
 module MathGame
   class Match
-
-    def self.generate_match
-
-      # enter new players
+    def self.call_players
       print "Player 1: Enter your name... "
       play1 = $stdin.gets.chomp
       print "Player 2: Enter your name... "
       play2 = $stdin.gets.chomp
+      
+      return [play1, play2]
+    end
+
+    def self.generate_match
+      # enter new players
+      players = self.call_players
 
       # initialize new players
-      player1 = Player.new(play1)
-      player2 = Player.new(play2)
+      player1 = Player.new(players.first)
+      player2 = Player.new(players.last)
       puts ""
 
       count = 0
 
       # end when player lives equal to zero
       while true do
-        if count % 2 == 0
-          player = player1
-        else
-          player = player2
-        end
+        player = count % 2 == 0 ? player1 : player2
 
         x = rand(0..20)
         y = rand(0..20)

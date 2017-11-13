@@ -9,6 +9,10 @@ module MathGame
       ans = gets.chomp.to_i
 
       # check if the answer is correct
+      self.check_answers(current_player, ans, x, y)
+    end
+
+    def self.check_answers(current_player, ans, x, y)
       if x + y == ans
         puts "#{current_player.name}: YES! You are correct."
       else
